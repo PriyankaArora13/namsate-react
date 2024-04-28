@@ -6,17 +6,32 @@
       </div>
 </div>
  */
-
-// ReactElement(Object)=>HTML(Browser understands)
-
 import React from "react";
 import ReactDOM from "react-dom/client";
-const parent=React.createElement("div",{id:"parent"},
-React.createElement(
-"div",{id:"child"},[
-    React.createElement("h1",{},"Hii I am h1 tag"),
-    React.createElement("h2",{},"this is an h2 tag")
-]
-));
+// ReactElement(Object)=>HTML(Browser understands)
+const heading=React.createElement("h1",{id:"heading"},"Namaste react");
+// console.log(heading);
+
+//JSX -- HTMl like syntax
+
+const Title= ()=>{return <h1 className="head">namaste react using JSX</h1>}
+
+
+
+
+    //React functional component
+    const HeadingComponent=()=>{
+        return(
+            <div id="container">
+                {Title()}
+                <Title/>
+                <Title></Title>
+                {1234+9800}
+            <h1 className="heading">This is react functional component</h1>
+            
+            </div>
+        )
+    }
 const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+//Component rendering using </>braces
+root.render(<HeadingComponent/>);
